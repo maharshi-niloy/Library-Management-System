@@ -81,11 +81,11 @@ class PublisherController extends Controller
         publisher::find($id)->delete();
         return redirect()->route('publishers');
     }
-    
-    public function search() 
+
+    public function search()
     {
-        $search_text = $_GET['search'];
+        $search_text = $_GET['query'];
         $publishers = publisher::where('name','LIKE','%'.$search_text.'%')->paginate(5);
-        return view('publisher.index',compact('publishers'));
+        return view("publisher.index",compact("publishers"));
     }
 }

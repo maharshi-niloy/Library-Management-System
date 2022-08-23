@@ -81,10 +81,11 @@ class AutherController extends Controller
         auther::findorfail($id)->delete();
         return redirect()->route('authors');
     }
-    public function search() 
+
+    public function search()
     {
-        $search_text = $_GET['search'];
+        $search_text = $_GET['query'];
         $authors = auther::where('name','LIKE','%'.$search_text.'%')->paginate(5);
-        return view('auther.index',compact('authors'));
+        return view("auther.index",compact("authors"));
     }
 }

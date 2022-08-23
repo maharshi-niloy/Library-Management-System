@@ -82,11 +82,11 @@ class CategoryController extends Controller
         category::find($id)->delete();
         return redirect()->route('categories');
     }
-    
-    public function search() 
+
+    public function search()
     {
-        $search_text = $_GET['search'];
+        $search_text = $_GET['query'];
         $categories = category::where('name','LIKE','%'.$search_text.'%')->paginate(5);
-        return view('category.index',compact('categories'));
+        return view("category.index",compact("categories"));
     }
 }

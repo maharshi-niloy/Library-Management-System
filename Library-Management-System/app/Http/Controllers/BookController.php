@@ -18,14 +18,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        // $search = $request['search'] ?? '';
-        // if ($search!=''){
-        //     $book = book::where('name','=',$search)->get();
-        // }else{
-        //     $book = book::all();
-        // }
-        // $data = compact('book','search');
-        // return view('book.index')->with($data);
+
         return view('book.index', [
             'books' => book::Paginate(5)
         ]);
@@ -106,10 +99,10 @@ class BookController extends Controller
         return redirect()->route('books');
     }
 
-    public function search() 
+    public function search()
     {
-        $search_text = $_GET['search'];
+        $search_text = $_GET['query'];
         $books = book::where('name','LIKE','%'.$search_text.'%')->paginate(5);
-        return view('book.index',compact('books'));
+        return view("book.index",compact("books"));
     }
 }

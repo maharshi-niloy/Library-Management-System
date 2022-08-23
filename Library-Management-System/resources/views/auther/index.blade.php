@@ -6,17 +6,17 @@
                 <div class="col-md-3">
                     <h2 class="admin-heading">All Authors</h2>
                 </div>
-
-                <form action='{{url("/authors/search")}}' class='offset-md-3' type='get'>
-                    <div class="form-group">
-                        <input type='search' name='search' class='form-control' placeholder='Search by author name'>
-                    </div>
-                    <button class='button'>Search</button>
-                </form> 
-
-                <div class="offset-md-1 col-md-2">
+                <div class="offset-md-7 col-md-2">
                     <a class="add-new" href="{{ route('authors.create') }}">Add Author</a>
                 </div>
+
+                <form action="{{ url('/authors/search')}}" type= "get" class="col-9">
+                    <div class="form-group">
+                        <input type="search" name="query" class="form-control" placeholder="Search by author name">
+                    </div>
+                    <button class="btn btn-primary">Search</button>
+                </form>
+
             </div>
             <div class="row">
                 <div class="col-md-12">

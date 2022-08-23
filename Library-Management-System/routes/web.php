@@ -53,8 +53,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/publisher/update/{id}', [PublisherController::class, 'update'])->name('publisher.update');
     Route::post('/publisher/delete/{id}', [PublisherController::class, 'destroy'])->name('publisher.destroy');
     Route::post('/publisher/create', [PublisherController::class, 'store'])->name('publisher.store');
-    Route::get('/publisher/search', [PUblisherController::class, 'search'])->name('publisher.index'); 
-
+    Route::get('/publisher/search', [PublisherController::class, 'search'])->name('publisher.index');
 
     // Category CRUD
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
@@ -63,9 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::post('/category/delete/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
     Route::post('/category/create', [CategoryController::class, 'store'])->name('category.store');
-    Route::get('/category/search', [CategoryController::class, 'search'])->name('category.index'); 
-
-
+    Route::get('/category/search', [CategoryController::class, 'search'])->name('category.index');
 
     // books CRUD
     Route::get('/books', [BookController::class, 'index'])->name('books');
@@ -74,7 +71,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/book/update/{id}', [BookController::class, 'update'])->name('book.update');
     Route::post('/book/delete/{id}', [BookController::class, 'destroy'])->name('book.destroy');
     Route::post('/book/create', [BookController::class, 'store'])->name('book.store');
-    Route::get('/book/search', [BookController::class, 'search'])->name('book.index');    
+    Route::get('/book/search', [BookController::class, 'search'])->name('book.index');
 
     // students CRUD
     Route::get('/students', [StudentController::class, 'index'])->name('students');
