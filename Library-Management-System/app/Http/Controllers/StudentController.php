@@ -100,4 +100,11 @@ class StudentController extends Controller
         student::find($id)->delete();
         return redirect()->route('students');
     }
+
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $students = student::where('name','LIKE','%'.$search_text.'%')->paginate(5);
+        return view("student.index",compact("students"));
+    }
 }
