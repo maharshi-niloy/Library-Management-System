@@ -81,7 +81,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/student/delete/{id}', [StudentController::class, 'destroy'])->name('student.destroy');
     Route::post('/student/create', [StudentController::class, 'store'])->name('student.store');
     Route::get('/student/show/{id}', [StudentController::class, 'show'])->name('student.show');
-
+    Route::get('/student/search', [StudentController::class, 'search'])->name('student.index');
 
 
     Route::get('/book_issue', [BookIssueController::class, 'index'])->name('book_issued');
