@@ -9,6 +9,14 @@
                 <div class="offset-md-6 col-md-2">
                     <a class="add-new" href="{{ route('student.create') }}">Add Student</a>
                 </div>
+
+                <form action="{{ url('/student/search')}}" type= "get" class="col-9">
+                    <div class="form-group">
+                        <input type="search" name="query" class="form-control" placeholder="Search by student name">
+                    </div>
+                    <button class="btn btn-primary">Search</button>
+                </form>
+
             </div>
             <div class="row">
                 <div class="col-md-12">
